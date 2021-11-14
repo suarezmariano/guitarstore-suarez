@@ -1,4 +1,31 @@
 .container {
   display: flex;
   justify-content: space-around;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.container .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: orange;
+}
+
+.container .logo span {
+  color: black;
+}
+
+.container a {
+  color: orange;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container a:hover {
+  color: black;
+  background-color: orange;
+}
+
+.container .nav a {
+  margin: 0 1rem;
 }
