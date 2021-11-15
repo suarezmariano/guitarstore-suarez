@@ -1,4 +1,6 @@
 import "./NavBar.css"
+import WidgetCart from "../WidgetCart/WidgetCart"
+
 
 const NavBar = () => {
     return (
@@ -10,6 +12,7 @@ const NavBar = () => {
                 <a href="#instruments">Instrumentos</a>
                 <a href="#services">Servicios</a>
                 <a href="#about">Sobre Nosotros</a>
+                <WidgetCart />
             </nav>
         </div>
         
