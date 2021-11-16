@@ -1,5 +1,5 @@
 .ItemListContainer {
   display: flex;
-  margin: 60px;
+  margin: 25px 60px;
   flex-wrap: wrap;
 }
