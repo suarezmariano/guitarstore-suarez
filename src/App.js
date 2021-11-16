@@ -2,53 +2,61 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
+import strato1 from './assets/img/strato1.jpg';
+import tele1 from './assets/img/tele1.jpg';
+import lespaul1 from './assets/img/lespaul1.jpg';
+import coronado from './assets/img/coronado.jpg';
+import strato2 from './assets/img/strato2.jpg';
+import lespaul2 from './assets/img/lespaul2.jpg';
+import pensa from './assets/img/pensa.jpg';
+import strato3 from './assets/img/strato3.jpg';
+
 function App() {
   return (
     <div className="App">
       <NavBar />
       <div className="ItemsSection">
         <ItemListContainer
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0118010712_gtr_frt_001_rr.jpg"
-        model="Fender Stratocaster 0001"
+        img={strato1}
+        model="Fender Stratocaster"
         price="U$S 1950"
         description="Modelo Standard, año 1977" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0113942750_fen_ins_frt_1_rr.jpg"
+        img={tele1}
         model="Fender Telecaster"
         price="U$S 2350"
         description="Tele Nashville, año 1962" />  
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0149813372_gtr_frt_001_rr.jpg"
-        model="Fender Jaguar"
+        img={lespaul1}
+        model="Gibson Les Paul"
         price="U$S 1799"
-        description="Vintage Jaguar, relic" />
+        description="Vintage Relic" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10002/0143021700_gtr_frt_001_rl.jpg"
-        model="Fender Jaguar"
+        img={coronado}
+        model="Fender Coronado"
         price="U$S 4999"
-        description="Kurt Cobain Signature" />
+        description="Color cherry Red" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0378553505_sqr_ins_frt_1_rr.jpg"
-        model="Fender Precision"
+        img={strato2}
+        model="Fender Stratocaster Gold"
         price="U$S 1999"
-        description="Bajo Electrico" />
+        description="Replica 1957" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0972013206_gtr_frt_001_rr.jpg"
-        model="Fender Acustasonic"
+        img={lespaul2}
+        model="Gibson Les Paul Custom"
         price="U$S 2579"
-        description="Acústica y Eléctrica" />
+        description="Año 1988, original" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10002/0960294221_gtr_frt_001_rr.jpg"
-        model="Fender Acoustic"
+        img={pensa}
+        model="Pensa Superstrat"
         price="U$S 1999"
-        description="Acústica de Concierto" />
+        description="Año 1988, mint" />
         <ItemListContainer 
-        img="https://www.fmicassets.com/Damroot/GuitarVertDesktopJpg/10001/0149783300_gtr_frt_001_rr.jpg"
-        model="Fender Mustang"
-        price="U$S 899"
-        description="Guitarra asequible y confortable" />
+        img={strato3}
+        model="Fender Stratocaster Custom Shop"
+        price="U$S 8899"
+        description="Color Blue Marine" />
       </div>
-      
     </div>
   );
 }
