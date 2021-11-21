@@ -12,9 +12,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-.ItemsSection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-}

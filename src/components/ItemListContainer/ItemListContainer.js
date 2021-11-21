@@ -1,18 +1,9 @@
-import { Card, Image } from "semantic-ui-react";
 import "./ItemListContainer.css";
+import ItemList from "../ItemList/ItemList";
 
-const ItemListContainer = ({ img, model, price, description }) => (
-  <div className="ItemListContainer">
-    <Card>
-      <Image src={img} wrapped ui={false} />
-      <Card.Content>
-        <Card.Header>{model}</Card.Header>
-        <Card.Meta>
-          <span className="date">{price}</span>
-        </Card.Meta>
-        <Card.Description>{description}</Card.Description>
-      </Card.Content>
-    </Card>
+const ItemListContainer = () => (
+  <div className=".container">
+    <ItemList />;
   </div>
 );
 
