@@ -3,7 +3,7 @@ import ItemList from "../ItemList/ItemList";
 
 const ItemListContainer = () => (
   <div className=".container">
-    <ItemList />;
+    <ItemList />
   </div>
 );
 
