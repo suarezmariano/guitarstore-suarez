@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
+
 import "./ItemList.css";
 import Item from "../Item/Item";
 
@@ -20,10 +22,16 @@ function ItemList() {
   return (
     <div className="itemList-container">
       {items2.map((item) => {
-        return <Item data={item} />
+        return (
+          <div key={item.id}>
+            <Link to={`/detail/${item.id}`}>
+              <Item data={item} />
+            </Link>
+          </div>
+        );
       })}
     </div>
   );
 }
-
+  
 export default ItemList;
