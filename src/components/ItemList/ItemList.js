@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "./ItemList.css";
 import Item from "../Item/Item";
@@ -33,5 +33,5 @@ function ItemList() {
     </div>
   );
 }
-  
+
 export default ItemList;

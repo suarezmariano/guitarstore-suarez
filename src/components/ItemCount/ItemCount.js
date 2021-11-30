@@ -24,23 +24,23 @@ function ItemCount({ stock, initial }) {
 
   return (
     <div className="buttons-container">
-      <div class="ui buttons">
-        <button class="ui button" onClick={handlerCounterDown}>
+      <div className="ui buttons">
+        <button className="ui button" onClick={handlerCounterDown}>
           {" "}
           -{" "}
         </button>
-        <div class="or" data-text={counter}></div>
-        <button class="ui button" onClick={handlerCounterUp}>
+        <div className="or" data-text={counter}></div>
+        <button className="ui button" onClick={handlerCounterUp}>
           {" "}
           +{" "}
         </button>
-        <button class="agregar ui button" onClick={ItemCount}>
+        <button className="agregar ui button" onClick={ItemCount}>
           Agregar al Carrito
         </button>
       </div>
-      <div class="ui horizontal statistic">
-        <div class="label">Carrito</div>
-        <div class="value">{counterToAdd}</div>
+      <div className="ui horizontal statistic">
+        <div className="label">Carrito</div>
+        <div className="value">{counterToAdd}</div>
       </div>
     </div>
   );

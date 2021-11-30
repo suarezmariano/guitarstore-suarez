@@ -4,7 +4,7 @@ import WidgetCart from "../WidgetCart/WidgetCart";
 const NavBar = () => {
   return (
     <div className="container">
-      <a href="#home" className="logo">
+      <a href="/" className="logo">
         <span>Guitar</span>Store
       </a>
 
