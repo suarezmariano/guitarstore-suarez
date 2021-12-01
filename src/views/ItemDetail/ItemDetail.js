@@ -17,9 +17,8 @@ function ItemDetail() {
     ).then((response) => setItems(response.data));
   }, [itemID]);
 
-  console.log(items);
   return (
-    <div className="itemDetail-container ">
+    <div className="itemDetail-container">
       <Detail data={items} />
     </div>
   );

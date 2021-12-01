@@ -1,4 +1,5 @@
 import "./Detail.css";
+import ItemCount from "../../components/ItemCount/ItemCount";
 
 const Detail = ({ data }) => (
   <div className="ui datas">
@@ -13,6 +14,7 @@ const Detail = ({ data }) => (
           <h3 className="ui header">Año {data.year}</h3>
           <div className="meta">{data.description}</div>
           <h3 className="ui header">{data.price}</h3>
+          <ItemCount stock="10" initial="0" />
         </div>
       </div>
     </div>
