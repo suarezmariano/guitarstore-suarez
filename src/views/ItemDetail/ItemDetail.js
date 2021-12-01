@@ -17,16 +17,10 @@ function ItemDetail() {
     ).then((response) => setItems(response.data));
   }, [itemID]);
 
-  const items2 = Array.from(items);
-  console.log(id);
-  console.log(id.id);
-  console.log(itemID);
+  console.log(items);
   return (
     <div className="itemDetail-container ">
-      <h1>Detalle de Producto</h1>
-      {items2.map((item) => {
-        return <Detail item={item} />;
-      })}
+      <Detail data={items} />
     </div>
   );
 }

@@ -1,16 +1,19 @@
 import "./Detail.css";
 
-const Detail = ({ item }) => (
-  <div class="ui datas">
-    <div class="data" style={{ width: 900 }}>
-      <div class="image">
-        <img src={item.img} alt="artículo" />
+const Detail = ({ data }) => (
+  <div className="ui datas">
+    <div className="ui grid">
+      <div className="four wide column">
+        <img src={data.img} alt="artículo" className="ui image" />
       </div>
-      <div class="content">
-        <div class="header">{item.brand + " " + item.model}</div>
-        <div class="meta">{item.year}</div>
-        <div class="meta">{item.description}</div>
-        <div class="description">{item.price}</div>
+      <div className="nine wide column">
+        <div className="content">
+          <h1 className="ui header">Detalle de Producto</h1>
+          <h2 className="ui header">{data.brand + " " + data.model}</h2>
+          <h3 className="ui header">Año {data.year}</h3>
+          <div className="meta">{data.description}</div>
+          <h3 className="ui header">{data.price}</h3>
+        </div>
       </div>
     </div>
   </div>
