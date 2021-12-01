@@ -14,7 +14,7 @@ function ItemList() {
       )
         .then((response) => response.json())
         .then((json) => setItems(json));
-    }, 3000);
+    }, 1500);
   }, []);
 
   const items2 = Array.from(items);
