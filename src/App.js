@@ -7,6 +7,7 @@ import ItemDetail from "./views/ItemDetail/ItemDetail";
 import CategoryList from "./components/CategoryList/CategoryList";
 import Services from "./views/Services/Services";
 import About from "./views/About/About";
+import Cart from "./views/Cart/Cart";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/category/:id" element={<CategoryList />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </Router>
