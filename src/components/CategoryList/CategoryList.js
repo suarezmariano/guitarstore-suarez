@@ -20,7 +20,9 @@ function CategoryList() {
     }, 1500);
   }, []);
 
-  const items2 = Array.from(items);
+  const items2 = items.filter(function (array) {
+    return array.type === type;
+  });
 
   console.log(type);
   console.log(items);

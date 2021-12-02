@@ -19,6 +19,9 @@ function ItemDetail() {
     }, 1500);
   }, [itemID]);
 
+  console.log(id);
+  console.log(items);
+
   return (
     <div className="itemDetail-container">
       <Detail data={items} />

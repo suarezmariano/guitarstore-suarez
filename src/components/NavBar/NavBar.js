@@ -11,10 +11,10 @@ function NavBar() {
       </a>
 
       <nav className="nav">
-        <Link to={`/category/:Electrica`}>Eléctricas</Link>
-        <Link to={`/category/:Acustica`}>Acústicas</Link>
-        <a href="#services">Servicios</a>
-        <a href="#about">Sobre Nosotros</a>
+        <Link to={`/category/Electrica`}>Eléctricas</Link>
+        <Link to={`/category/Acustica`}>Acústicas</Link>
+        <Link to={`/services`}>Servicios</Link>
+        <Link to={`/about`}>Sobre Nosotros</Link>
         <WidgetCart />
       </nav>
     </div>
