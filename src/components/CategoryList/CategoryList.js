@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
-import "./ItemList.css";
+import "./CategoryList.css";
 import Item from "../Item/Item";
 
-function ItemList() {
+function CategoryList() {
+  let type = useParams();
+
   const [items, setItems] = useState([]);
 
   useEffect(() => {
@@ -19,8 +22,12 @@ function ItemList() {
 
   const items2 = Array.from(items);
 
+  console.log(type);
+  console.log(items);
+  console.log(items2);
+
   return (
-    <div className="itemList-container">
+    <div className="categoryList-container">
       {items2.map((item) => {
         return (
           <div key={item.id}>
@@ -34,4 +41,4 @@ function ItemList() {
   );
 }
 
-export default ItemList;
+export default CategoryList;
