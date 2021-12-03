@@ -8,6 +8,7 @@ import CategoryList from "./components/CategoryList/CategoryList";
 import Services from "./views/Services/Services";
 import About from "./views/About/About";
 import Cart from "./views/Cart/Cart";
+import Footer from "./components/Footer/Fotter";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );
