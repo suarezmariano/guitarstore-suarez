@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="box-container">
         <div className="box">
           <p>
-            Diseñado por Mariano Suarez | 2021 - Todos los derechos reservados.
+            Diseñado por Mariano Suarez - 2021 - Todos los derechos reservados.
           </p>
         </div>
 
