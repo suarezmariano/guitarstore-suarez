@@ -2,6 +2,8 @@
 
 ## This is my first react-app, developed for the ReactJS course from Coderhouse Argentina.
 
+![GIF](https://media.giphy.com/media/TRAyLKh2sQGC3vxoce/giphy.gif)
+
 ### `npm start`
 
 Runs the app in the development mode.\
