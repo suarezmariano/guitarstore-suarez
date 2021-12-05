@@ -1,5 +1,5 @@
 import "./Detail.css";
-import ItemCount from "../../components/ItemCount/ItemCount";
+import ItemCount from "../ItemCount/ItemCount";
 
 const Detail = ({ data }) => (
   <div className="ui datas">

@@ -11,8 +11,8 @@ function NavBar() {
       </a>
 
       <nav className="nav">
-        <Link to={`/category/electricas`}>Eléctricas</Link>
-        <Link to={`/category/acusticas`}>Acústicas</Link>
+        <Link to={`/category/Electrica`}>Eléctricas</Link>
+        <Link to={`/category/Acustica`}>Acústicas</Link>
         <Link to={`/services`}>Servicios</Link>
         <Link to={`/about`}>Sobre Nosotros</Link>
         <Link to={`/cart`}>

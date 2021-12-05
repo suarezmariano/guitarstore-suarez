@@ -10,7 +10,7 @@ function ItemList() {
   useEffect(() => {
     setTimeout(() => {
       fetch(
-        "https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/all"
+        "https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments"
       )
         .then((response) => response.json())
         .then((json) => setItems(json));

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router";
 
 import "./ItemDetail.css";
-import Detail from "../../components/Detail/Detail";
+import Detail from "../Detail/Detail";
 
 function ItemDetail() {
   let id = useParams();
@@ -14,7 +14,7 @@ function ItemDetail() {
   useEffect(() => {
     setTimeout(() => {
       axios(
-        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/all/${itemID}`
+        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments/${itemID}`
       ).then((response) => setItems(response.data));
     }, 1500);
   }, [itemID]);

@@ -3,7 +3,7 @@ import "./App.css";
 
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./views/Home/Home";
-import ItemDetail from "./views/ItemDetail/ItemDetail";
+import ItemDetail from "./components/ItemDetail/ItemDetail";
 import CategoryList from "./components/CategoryList/CategoryList";
 import Services from "./views/Services/Services";
 import About from "./views/About/About";
