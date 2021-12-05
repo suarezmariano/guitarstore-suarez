@@ -14,7 +14,7 @@ function ItemDetail() {
   useEffect(() => {
     setTimeout(() => {
       axios(
-        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments/${itemID}`
+        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/all/${itemID}`
       ).then((response) => setItems(response.data));
     }, 1500);
   }, [itemID]);

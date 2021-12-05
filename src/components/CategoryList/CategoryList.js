@@ -6,27 +6,25 @@ import "./CategoryList.css";
 import Item from "../Item/Item";
 
 function CategoryList() {
-  let type = useParams();
+  const type = useParams();
+  const typeID = type.id;
 
   const [items, setItems] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
       fetch(
-        "https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments"
+        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/${typeID}`
       )
         .then((response) => response.json())
         .then((json) => setItems(json));
     }, 1500);
-  }, []);
-
-  const items2 = items.filter(function (array) {
-    return array.type === type;
-  });
+  }, [typeID]);
 
   console.log(type);
   console.log(items);
-  console.log(items2);
+
+  const items2 = Array.from(items);
 
   return (
     <div className="categoryList-container">
