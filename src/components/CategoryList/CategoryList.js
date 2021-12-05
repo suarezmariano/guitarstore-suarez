@@ -25,10 +25,6 @@ function CategoryList() {
     return array.type === typeID;
   });
 
-  console.log(typeID);
-  console.log(items);
-  console.log(items2);
-
   return (
     <div className="categoryList-container">
       {items2.map((item) => {
