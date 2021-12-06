@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 import "./ItemCount.css";
 
 function ItemCount({ stock, initial }) {
   const [counter, setCounter] = useState(0);
-  const [counterToAdd, setCounterToAdd] = useState(0);
+  const [onAdd, setOnAdd] = useState(0);
 
   const handlerCounterUp = () => {
     setCounter(counter + 1);
@@ -17,14 +19,18 @@ function ItemCount({ stock, initial }) {
 
   const ItemCount = () => {
     if (counter <= stock) {
-      setCounterToAdd(+initial + counter);
+      setOnAdd(+initial + counter);
       setCounter(0);
     }
   };
 
+  const ProcessOrder = () => {
+    alert("Compra procesada!");
+  };
+
   return (
     <div className="buttons-container">
-      <div className="ui buttons">
+      <div className="ui buttons ">
         <button className="ui button" onClick={handlerCounterDown}>
           {" "}
           -{" "}
@@ -39,8 +45,30 @@ function ItemCount({ stock, initial }) {
         </button>
       </div>
       <div className="ui horizontal statistic">
-        <div className="label">Carrito</div>
-        <div className="value">{counterToAdd}</div>
+        <div className="label">Procesar comprar de:</div>
+        <div className="value"> {onAdd}</div>
+        <div className="label">unidades</div>
+      </div>
+      <div>
+        <Link to={`/`}>
+          <button className="ui animated button">
+            <div className="visible content">Volver</div>
+            <div className="hidden content">
+              <i aria-hidden="true" className="arrow left icon"></i>
+            </div>
+          </button>
+        </Link>
+        <Link to={`/cart`}>
+          <button
+            onClick={ProcessOrder}
+            className="ui vertical animated button"
+          >
+            <div className="hidden content">Comprar </div>
+            <div className="visible content">
+              <i aria-hidden="true" className="shop icon"></i>
+            </div>
+          </button>
+        </Link>
       </div>
     </div>
   );

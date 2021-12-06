@@ -1,5 +1,4 @@
 import "./Item.css";
-import ItemCount from "../ItemCount/ItemCount";
 
 const Item = ({ data }) => (
   <div className="items-container">
@@ -10,9 +9,6 @@ const Item = ({ data }) => (
       <div className="content">
         <div className="header">{data.brand + " " + data.model}</div>
         <div className="description">{data.price}</div>
-        <div>
-          <ItemCount stock="10" initial="0" />
-        </div>
       </div>
     </div>
   </div>
