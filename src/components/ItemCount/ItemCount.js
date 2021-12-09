@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { CartContext } from "../CartContext/CartContext";
 
 import "./ItemCount.css";
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ stock, initial, data }) {
   const [counter, setCounter] = useState(0);
   const [onAdd, setOnAdd] = useState(0);
+  const [order, setOrder] = useContext(CartContext);
 
   const handlerCounterUp = () => {
     setCounter(counter + 1);
@@ -25,6 +28,13 @@ function ItemCount({ stock, initial }) {
   };
 
   const ProcessOrder = () => {
+    setOrder(
+      (order = [
+        {
+          cuantity: { onAdd },
+        },
+      ])
+    );
     alert("Compra procesada!");
   };
 

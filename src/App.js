@@ -9,22 +9,25 @@ import Services from "./views/Services/Services";
 import About from "./views/About/About";
 import Cart from "./views/Cart/Cart";
 import Footer from "./components/Footer/Fotter";
+import { CartProvider } from "./components/CartContext/CartContext";
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/item/:id" element={<ItemDetail />} />
-          <Route path="/category/:id" element={<CategoryList />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-        <Footer />
-      </div>
+      <CartProvider>
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/item/:id" element={<ItemDetail />} />
+            <Route path="/category/:id" element={<CategoryList />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+          <Footer />
+        </div>
+      </CartProvider>
     </Router>
   );
 }
