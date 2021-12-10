@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-import "./ItemCount.css";
+import './ItemCount.css';
 
 function ItemCount({ stock, initial, data }) {
   const [counter, setCounter] = useState(0);
@@ -25,20 +25,24 @@ function ItemCount({ stock, initial, data }) {
   };
 
   const ProcessOrder = () => {
-    alert("Compra procesada!");
+    if (onAdd > 0) {
+      alert('Compra procesada!');
+    } else {
+      alert('No agregaste productos al carrito!');
+    }
   };
 
   return (
     <div className="buttons-container">
       <div className="ui buttons ">
         <button className="ui button" onClick={handlerCounterDown}>
-          {" "}
-          -{" "}
+          {' '}
+          -{' '}
         </button>
         <div className="or" data-text={counter}></div>
         <button className="ui button" onClick={handlerCounterUp}>
-          {" "}
-          +{" "}
+          {' '}
+          +{' '}
         </button>
         <button className="agregar ui button" onClick={ItemCount}>
           Agregar al Carrito

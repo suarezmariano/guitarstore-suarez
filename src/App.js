@@ -13,8 +13,8 @@ import { CartProvider } from './components/CartContext/CartContext';
 
 function App() {
   return (
-    <Router>
-      <CartProvider>
+    <CartProvider>
+      <Router>
         <div className="App">
           <NavBar />
           <Routes>
@@ -27,8 +27,8 @@ function App() {
           </Routes>
           <Footer />
         </div>
-      </CartProvider>
-    </Router>
+      </Router>
+    </CartProvider>
   );
 }
 
