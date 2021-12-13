@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import './Detail.css';
 
 import ItemCount from '../ItemCount/ItemCount';
-import { CartContext } from '../CartContext/CartContext';
 
 function Detail({ data }) {
-  const { addItem } = useContext(CartContext);
+  const [add, setAdd] = useState(false);
+
+  const onAdd = () => {
+    setAdd(!add);
+  };
 
   return (
     <div className="ui datas">
@@ -20,7 +23,7 @@ function Detail({ data }) {
             <h3 className="ui header">Año {data.year}</h3>
             <div className="meta">{data.description}</div>
             <h3 className="ui header">{data.price}</h3>
-            <ItemCount data={data} stock="10" initial="0" addItem={addItem} />
+            <ItemCount data={data} stock="10" initial="0" onAdd={onAdd} />
           </div>
         </div>
       </div>
