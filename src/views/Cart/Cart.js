@@ -5,9 +5,17 @@ import { CartContext } from '../../components/CartContext/CartContext';
 
 function Cart() {
   const { items, addItem } = useContext(CartContext);
-  console.log(items);
 
-  return <div className=".cart"></div>;
+  return (
+    <div className=".cart">
+      <h1>Detalle de tu compra: </h1>
+      {items.map((item) => (
+        <div key={item.id}>
+          <h1>{item.title}</h1>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default Cart;

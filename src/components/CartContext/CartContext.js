@@ -3,20 +3,16 @@ import React, { createContext, useState } from 'react';
 export const CartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
-  const [items, setItems] = useState([
-    {
-      id: 1,
-      title: 'primer producto',
-      quantity: 5,
-    },
-  ]);
+  const [items, setItems] = useState([]);
 
   const isInCart = (id) => {};
 
-  const addItem = (id, item, quantity) => {
-    setItems([...items, { ...item, quantity: quantity }]);
+  const addItem = (item, quantity) => {
+    
+    setItems([...items, { ...item, id: item.id, quantity: quantity }]);
+    
   };
-
+  console.log(items);
   return (
     <CartContext.Provider value={{ items, addItem }}>
       {children}

@@ -3,24 +3,24 @@ import { Link } from 'react-router-dom';
 
 import './ItemCount.css';
 
-function ItemCount({ stock, initial, data }) {
-  const [counter, setCounter] = useState(0);
+function ItemCount({ stock, initial, addItem, data }) {
+  const [quantity, setQuantity] = useState(0);
   const [onAdd, setOnAdd] = useState(0);
 
   const handlerCounterUp = () => {
-    setCounter(counter + 1);
+    setQuantity(quantity + 1);
   };
 
   const handlerCounterDown = () => {
-    if (counter > 0) {
-      setCounter(counter - 1);
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
     }
   };
 
   const ItemCount = () => {
-    if (counter <= stock) {
-      setOnAdd(+initial + counter);
-      setCounter(0);
+    if (quantity <= stock) {
+      setOnAdd(+initial + quantity);
+      setQuantity(0);
     }
   };
 
@@ -39,7 +39,7 @@ function ItemCount({ stock, initial, data }) {
           {' '}
           -{' '}
         </button>
-        <div className="or" data-text={counter}></div>
+        <div className="or" data-text={quantity}></div>
         <button className="ui button" onClick={handlerCounterUp}>
           {' '}
           +{' '}
@@ -64,7 +64,8 @@ function ItemCount({ stock, initial, data }) {
         </Link>
         <Link to={`/cart`}>
           <button
-            onClick={ProcessOrder}
+            onClick={ProcessOrder, () => {addItem({data, quantity})
+            }}
             className="ui vertical animated button"
           >
             <div className="hidden content">Comprar </div>

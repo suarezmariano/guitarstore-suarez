@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import { useParams } from "react-router";
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useParams } from 'react-router';
 
-import "./ItemDetail.css";
-import Detail from "../Detail/Detail";
+import './ItemDetail.css';
+import Detail from '../Detail/Detail';
 
 function ItemDetail() {
   let id = useParams();
@@ -18,9 +18,6 @@ function ItemDetail() {
       ).then((response) => setItems(response.data));
     }, 1500);
   }, [itemID]);
-
-  console.log(id);
-  console.log(items);
 
   return (
     <div className="itemDetail-container">
