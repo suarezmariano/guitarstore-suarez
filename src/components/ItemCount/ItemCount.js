@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import './ItemCount.css';
 
-function ItemCount({ stock, initial }) {
+function ItemCount({ data, stock, initial, addItem }) {
   const [quantity, setQuantity] = useState(0);
 
   const handlerCounterUp = () => {
@@ -39,7 +39,26 @@ function ItemCount({ stock, initial }) {
           +{' '}
         </button>
 
-        <button className="agregar ui button">Agregar al Carrito</button>
+        {quantity > 0 && quantity <= stock ? (
+          <div>
+            <button
+              className="agregar ui button"
+              onClick={() => addItem({ data, quantity })}
+            >
+              Agregar al Carrito
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button
+              disabled
+              className="agregar ui button"
+              onClick={() => addItem({ data, quantity })}
+            >
+              Agregar al Carrito
+            </button>
+          </div>
+        )}
       </div>
 
       <div>
