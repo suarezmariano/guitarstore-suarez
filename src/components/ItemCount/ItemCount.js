@@ -39,7 +39,7 @@ function ItemCount({ data, stock, initial, addItem }) {
           +{' '}
         </button>
 
-        {quantity > 0 && quantity <= stock ? (
+        {quantity > initial && quantity <= stock ? (
           <div>
             <button
               className="agregar ui button"
@@ -50,11 +50,7 @@ function ItemCount({ data, stock, initial, addItem }) {
           </div>
         ) : (
           <div>
-            <button
-              disabled
-              className="agregar ui button"
-              onClick={() => addItem({ data, quantity })}
-            >
+            <button disabled className="agregar ui button">
               Agregar al Carrito
             </button>
           </div>

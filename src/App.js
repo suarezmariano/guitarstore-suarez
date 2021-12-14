@@ -9,7 +9,7 @@ import Services from './views/Services/Services';
 import About from './views/About/About';
 import Cart from './views/Cart/Cart';
 import Footer from './components/Footer/Fotter';
-import { CartProvider } from './components/CartContext/CartContext';
+import { CartProvider } from './context/CartContext/CartContext';
 
 function App() {
   return (

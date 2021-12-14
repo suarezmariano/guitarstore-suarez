@@ -1,12 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './Detail.css';
 
 import ItemCount from '../ItemCount/ItemCount';
-import { CartContext } from '../CartContext/CartContext';
+import { CartContext } from '../../context/CartContext/CartContext';
 
 function Detail({ data }) {
-  const [add, setAdd] = useState(false);
-
   const { addItem } = useContext(CartContext);
 
   return (
