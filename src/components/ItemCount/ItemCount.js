@@ -43,7 +43,7 @@ function ItemCount({ data, stock, initial, addItem }) {
           <div>
             <button
               className="agregar ui button"
-              onClick={() => addItem({ data, quantity })}
+              onClick={() => addItem(data, quantity)}
             >
               Agregar al Carrito
             </button>
