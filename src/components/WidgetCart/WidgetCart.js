@@ -8,12 +8,12 @@ const WidgetCart = () => {
   let itemsInCart = 0;
 
   items.map((item) => {
-    itemsInCart = itemsInCart + item.quantity;
+    return (itemsInCart = itemsInCart + item.quantity);
   });
 
   return (
-    <div class="ui label">
-      <i aria-hidden="true" class="cart icon large"></i> {itemsInCart}
+    <div className="ui label">
+      <i aria-hidden="true" className="cart icon large"></i> {itemsInCart}
     </div>
   );
 };
