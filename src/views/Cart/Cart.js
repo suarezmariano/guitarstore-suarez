@@ -15,7 +15,7 @@ function Cart() {
           <h1>{item.brand}</h1>
           <h1>{item.model}</h1>
           <h1>{item.price}</h1>
-          <h6 onClick={() => removeItem(item.id)}>Borrar Producto</h6>
+          <button onClick={() => removeItem(item.id)}>Borrar Producto</button>
         </div>
       ))}
     </div>
