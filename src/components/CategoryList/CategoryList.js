@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router';
+import { collection, query, where, getDocs } from 'firebase/firestore';
 
-import "./CategoryList.css";
-import Item from "../Item/Item";
+import './CategoryList.css';
+import Item from '../Item/Item';
+import { db } from '../../firebase/firebaseConfig';
 
 function CategoryList() {
   const id = useParams();
@@ -12,13 +14,18 @@ function CategoryList() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      fetch(
-        "https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments"
-      )
-        .then((response) => response.json())
-        .then((json) => setItems(json));
-    }, 1500);
+    const getItems = async () => {
+      const querySnapshot = await getDocs(
+        collection(db, 'instruments'),
+        where('type', '==', typeID)
+      );
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItems(docs);
+    };
+    getItems();
   }, [typeID]);
 
   const items2 = items.filter(function (array) {

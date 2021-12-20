@@ -10,7 +10,6 @@ import About from './views/About/About';
 import Cart from './views/Cart/Cart';
 import Footer from './components/Footer/Fotter';
 import { CartProvider } from './context/CartContext/CartContext';
-import { db } from "./firebase/firebaseConfig";
 
 function App() {
   return (
