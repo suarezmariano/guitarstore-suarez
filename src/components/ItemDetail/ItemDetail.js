@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useParams } from 'react-router';
+import { doc, getDoc } from 'firebase/firestore';
 
 import './ItemDetail.css';
 import Detail from '../Detail/Detail';
+import { db } from '../../firebase/firebaseConfig';
 
 function ItemDetail() {
   let id = useParams();
@@ -12,11 +13,13 @@ function ItemDetail() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      axios(
-        `https://my-json-server.typicode.com/suarezmariano/guitarstoreapi/instruments/${itemID}`
-      ).then((response) => setItems(response.data));
-    }, 1500);
+    const getItems = async () => {
+      const docRef = doc(db, 'instruments', itemID);
+      const docSnap = await getDoc(docRef);
+
+      setItems(docSnap.data());
+    };
+    getItems();
   }, [itemID]);
 
   return (

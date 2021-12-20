@@ -1,4 +1,4 @@
-import "./Item.css";
+import './Item.css';
 
 const Item = ({ data }) => (
   <div className="items-container">
@@ -7,8 +7,8 @@ const Item = ({ data }) => (
         <img src={data.img} alt="artículo" />
       </div>
       <div className="content">
-        <div className="header">{data.brand + " " + data.model}</div>
-        <div className="description">{data.price}</div>
+        <div className="header">{data.brand + ' ' + data.model}</div>
+        <div className="description">u$s {data.price}</div>
       </div>
     </div>
   </div>
