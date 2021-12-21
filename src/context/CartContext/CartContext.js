@@ -24,6 +24,7 @@ export const CartProvider = ({ children }) => {
           ...items,
           {
             id: item.id,
+            img: item.img,
             brand: item.brand,
             model: item.model,
             price: item.price,
@@ -38,7 +39,7 @@ export const CartProvider = ({ children }) => {
 
   const clearItems = () => {
     setItems([]);
-  }
+  };
 
   return (
     <CartContext.Provider value={{ items, addItem, removeItem, clearItems }}>
