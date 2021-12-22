@@ -9,25 +9,31 @@ function Cart() {
   return (
     <div className="ui container">
       <h1>Detalle de tu compra: </h1>
-
-      {items.map((item) => (
-        <div className="ui segment" key={item.id}>
-          <div id="item">
-            <img src={item.img} alt="artículo" className="ui tiny image" />
-
-            <h1>Cantidad: {item.quantity}</h1>
-            <h1>{item.brand}</h1>
-            <h1>{item.model}</h1>
-            <h1>u$s {item.price}</h1>
+      <div className="ui segment">
+        {items.map((item) => (
+          <div className="ui segment" key={item.id}>
+            <div id="item">
+              {' '}
+              <button
+                className="ui negative small button"
+                onClick={() => removeItem(item.id)}
+              >
+                Borrar Producto
+              </button>
+              <img src={item.img} alt="artículo" className="ui tiny image" />
+              <h1>Cantidad:{item.quantity}</h1>
+              <h1>
+                {item.brand} {item.model}
+              </h1>
+              <h1>P.U. u$s{item.price}</h1>
+              <h1>Total u$s{item.quantity * item.price}</h1>
+            </div>
           </div>
-          <button className="ui button" onClick={() => removeItem(item.id)}>
-            Borrar Producto
-          </button>
-        </div>
-      ))}
-      <button className="ui button" onClick={() => clearItems()}>
-        Vaciar Carrito
-      </button>
+        ))}
+        <button className="ui negative button" onClick={() => clearItems()}>
+          Vaciar Carrito
+        </button>
+      </div>
       <div className="ui segment">
         <form class="ui form">
           <div class="field">
@@ -45,7 +51,7 @@ function Cart() {
               <label>Acepto los terminos y condiciones</label>
             </div>
           </div>
-          <button type="submit" class="ui button">
+          <button type="submit" class="ui positive button">
             Comprar
           </button>
         </form>
