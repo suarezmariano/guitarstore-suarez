@@ -1,10 +1,42 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
 import './Cart.css';
 
 import { CartContext } from '../../context/CartContext/CartContext';
+import { db } from '../../firebase/firebaseConfig';
+
+import MessageSuccess from '../../components/MessageSuccess/MessageSuccess';
+import Spinner from '../../components/Spinner/Spinner';
+
+const initialState = {
+  name: '',
+  phone: '',
+  email: '',
+};
 
 function Cart() {
   const { items, removeItem, clearItems } = useContext(CartContext);
+  const [values, setValues] = useState(initialState);
+  const [orderID, setOrderID] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onChangeHandler = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
+
+  const onSubmitHandler = async (e) => {
+    setIsLoading(true);
+    e.preventDefault();
+    const docRef = await addDoc(collection(db, 'orders'), {
+      values,
+    });
+    setOrderID(docRef);
+    setTimeout(() => {
+      setIsLoading(false);
+      setValues(initialState);
+    }, 1000);
+  };
 
   return (
     <div className="ui container">
@@ -34,27 +66,49 @@ function Cart() {
           Vaciar Carrito
         </button>
       </div>
+
       <div className="ui segment">
-        <form class="ui form">
+        <form class="ui form" onSubmit={onSubmitHandler}>
           <div class="field">
-            <input name="name" placeholder="Nombre y Apellido" />
+            <input
+              name="name"
+              placeholder="Nombre y Apellido"
+              value={values.name}
+              onChange={onChangeHandler}
+            />
           </div>
+
           <div class="field">
-            <input name="phone" placeholder="Teléfono" />
+            <input
+              name="phone"
+              placeholder="Teléfono"
+              value={values.phone}
+              onChange={onChangeHandler}
+            />
           </div>
+
           <div class="field">
-            <input name="email" placeholder="Correo Electrónico" />
-          </div>
-          <div class="field">
-            <div class="ui checkbox">
-              <input type="checkbox" class="hidden" readonly="" tabindex="0" />
-              <label>Acepto los terminos y condiciones</label>
-            </div>
+            <input
+              name="email"
+              placeholder="Correo Electrónico"
+              value={values.email}
+              onChange={onChangeHandler}
+            />
           </div>
           <button type="submit" class="ui positive button">
             Comprar
           </button>
         </form>
+
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          orderID.id && (
+            <div>
+              <MessageSuccess msg={orderID} />
+            </div>
+          )
+        )}
       </div>
     </div>
   );
