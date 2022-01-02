@@ -6,12 +6,14 @@ import { collection, query, where, getDocs } from 'firebase/firestore';
 import './CategoryList.css';
 import Item from '../Item/Item';
 import { db } from '../../firebase/firebaseConfig';
+import Spinner from '../Spinner/Spinner';
 
 function CategoryList() {
   const id = useParams();
   const typeID = id.id;
 
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getItems = async () => {
@@ -26,6 +28,9 @@ function CategoryList() {
       setItems(docs);
     };
     getItems();
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   }, [typeID]);
 
   const items2 = items.filter(function (array) {
@@ -33,17 +38,25 @@ function CategoryList() {
   });
 
   return (
-    <div className="categoryList-container">
-      {items2.map((item) => {
-        return (
-          <div key={item.id}>
-            <Link to={`/item/${item.id}`}>
-              <Item data={item} />
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {isLoading ? (
+        <div className="spinner">
+          <Spinner />
+        </div>
+      ) : (
+        <div className="categoryList-container">
+          {items2.map((item) => {
+            return (
+              <div key={item.id}>
+                <Link to={`/item/${item.id}`}>
+                  <Item data={item} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 }
 
