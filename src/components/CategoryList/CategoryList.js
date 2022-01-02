@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router';
-import { collection, query, where, getDocs } from 'firebase/firestore';
+import { collection, where, getDocs } from 'firebase/firestore';
 
 import './CategoryList.css';
 import Item from '../Item/Item';
