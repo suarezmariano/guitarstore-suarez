@@ -5,9 +5,11 @@ import { collection, doc, getDocs } from 'firebase/firestore';
 import './ItemList.css';
 import Item from '../Item/Item';
 import { db } from '../../firebase/firebaseConfig';
+import Spinner from '../Spinner/Spinner';
 
 function ItemList() {
   const [items, setItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const getItems = async () => {
@@ -19,22 +21,33 @@ function ItemList() {
       setItems(docs);
     };
     getItems();
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   }, []);
 
   const items2 = Array.from(items);
 
   return (
-    <div className="itemList-container">
-      {items2.map((item) => {
-        return (
-          <div key={item.id}>
-            <Link to={`/item/${item.id}`}>
-              <Item data={item} />
-            </Link>
-          </div>
-        );
-      })}
-    </div>
+    <>
+      {isLoading ? (
+        <div className="spinner">
+          <Spinner />
+        </div>
+      ) : (
+        <div className="itemList-container">
+          {items2.map((item) => {
+            return (
+              <div key={item.id}>
+                <Link to={`/item/${item.id}`}>
+                  <Item data={item} />
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </>
   );
 }
 
