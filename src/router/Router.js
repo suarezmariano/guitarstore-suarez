@@ -8,6 +8,7 @@ import ItemDetail from '../components/ItemDetail/ItemDetail';
 import CategoryList from '../components/CategoryList/CategoryList';
 import Services from '../views/Services/Services';
 import About from '../views/About/About';
+import Error from '../views/Error/Error';
 import Cart from '../views/Cart/Cart';
 import Footer from '../components/Footer/Fotter';
 
@@ -23,6 +24,7 @@ const Router = () => {
           <Route exact path="/services" element={<Services />} />
           <Route exact path="/about" element={<About />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route path="/*" element={<Error />} />
         </Routes>
         <Footer />
       </div>
