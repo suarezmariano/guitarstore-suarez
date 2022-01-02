@@ -9,5 +9,4 @@ const MessageSuccess = ({ msg }) => (
     style={{ textAlign: 'center' }}
   />
 );
-
 export default MessageSuccess;

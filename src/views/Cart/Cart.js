@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import './Cart.css';
 
@@ -12,6 +13,7 @@ const initialState = {
   name: '',
   phone: '',
   email: '',
+  email2: '',
 };
 
 function Cart() {
@@ -37,7 +39,7 @@ function Cart() {
       setValues(initialState);
     }, 1000);
   };
-
+  console.log(items);
   return (
     <div className="ui container">
       <h1>Detalle de tu compra: </h1>
@@ -62,14 +64,25 @@ function Cart() {
             </div>
           </div>
         ))}
-        <button className="ui negative button" onClick={() => clearItems()}>
-          Vaciar Carrito
-        </button>
+
+        {items.length === 0 ? (
+          <button
+            disabled
+            className="ui negative button"
+            onClick={() => clearItems()}
+          >
+            Vaciar Carrito
+          </button>
+        ) : (
+          <button className="ui negative button" onClick={() => clearItems()}>
+            Vaciar Carrito
+          </button>
+        )}
       </div>
 
       <div className="ui segment">
-        <form class="ui form" onSubmit={onSubmitHandler}>
-          <div class="field">
+        <form className="ui form" onSubmit={onSubmitHandler}>
+          <div className="field">
             <input
               name="name"
               placeholder="Nombre y Apellido"
@@ -78,7 +91,7 @@ function Cart() {
             />
           </div>
 
-          <div class="field">
+          <div className="field">
             <input
               name="phone"
               placeholder="Teléfono"
@@ -87,7 +100,7 @@ function Cart() {
             />
           </div>
 
-          <div class="field">
+          <div className="field">
             <input
               name="email"
               placeholder="Correo Electrónico"
@@ -95,9 +108,24 @@ function Cart() {
               onChange={onChangeHandler}
             />
           </div>
-          <button type="submit" class="ui positive button">
-            Comprar
-          </button>
+          <div className="field">
+            <input
+              name="email2"
+              placeholder="Confirmar Correo Electrónico"
+              value={values.email2}
+              onChange={onChangeHandler}
+            />
+          </div>
+
+          {values.email === values.email2 ? (
+            <button type="submit" className="ui positive button">
+              Comprar
+            </button>
+          ) : (
+            <button disabled type="submit" className="ui positive button">
+              Comprar
+            </button>
+          )}
         </form>
 
         {isLoading ? (
@@ -106,6 +134,8 @@ function Cart() {
           orderID.id && (
             <div>
               <MessageSuccess msg={orderID} />
+
+              <Link to={`/`}>Retornar a la página principal</Link>
             </div>
           )
         )}
