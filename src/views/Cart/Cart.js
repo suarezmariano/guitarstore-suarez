@@ -39,7 +39,13 @@ function Cart() {
       setValues(initialState);
     }, 1000);
   };
-  console.log(items);
+
+  let total = 0;
+  items.forEach((element) => {
+    let subtotal = element.price * element.quantity;
+    total += subtotal;
+  });
+
   return (
     <div className="ui container">
       <h1>Detalle de tu compra: </h1>
@@ -64,6 +70,8 @@ function Cart() {
             </div>
           </div>
         ))}
+
+        <h1>Total de la Compra: u$s {total}</h1>
 
         {items.length === 0 ? (
           <button
@@ -119,11 +127,11 @@ function Cart() {
 
           {values.email === values.email2 ? (
             <button type="submit" className="ui positive button">
-              Comprar
+              Finalizar Compra
             </button>
           ) : (
             <button disabled type="submit" className="ui positive button">
-              Comprar
+              Finalizar Compra
             </button>
           )}
         </form>
@@ -134,7 +142,6 @@ function Cart() {
           orderID.id && (
             <div>
               <MessageSuccess msg={orderID} />
-
               <Link to={`/`}>Retornar a la página principal</Link>
             </div>
           )
