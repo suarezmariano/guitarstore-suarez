@@ -55,12 +55,11 @@ function Cart() {
         {items.map((item) => (
           <div className="ui segment" key={item.id}>
             <div id="item">
-              {' '}
               <button
                 className="ui negative small button"
                 onClick={() => removeItem(item.id)}
               >
-                Borrar Producto
+                Eliminar
               </button>
               <img src={item.img} alt="artículo" className="ui tiny image" />
               <h1>Cantidad:{item.quantity}</h1>

@@ -4,6 +4,7 @@ export const CartContext = createContext([]);
 
 export const CartProvider = ({ children }) => {
   const [items, setItems] = useState([]);
+  const [favs, setFavs] = useState([]);
 
   const isInCart = (id) => {
     const found = items.find((item) => item.id === id);
@@ -41,8 +42,47 @@ export const CartProvider = ({ children }) => {
     setItems([]);
   };
 
+  const isInFavs = (id) => {
+    const isFav = favs.find((data) => data.id === id);
+    return isFav;
+  };
+
+  const addFavs = (data) => {
+    isInFavs(data.id)
+      ? alert('Ya esta en tus favoritos!')
+      : setItems([
+          ...favs,
+          {
+            id: data.id,
+            img: data.img,
+            brand: data.brand,
+            model: data.model,
+            price: data.price,
+          },
+        ]);
+  };
+
+  const removeFavs = (id) => {
+    setFavs(favs.filter((data) => data.id !== id));
+  };
+
+  const clearFavs = () => {
+    setFavs([]);
+  };
+
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem, clearItems }}>
+    <CartContext.Provider
+      value={{
+        items,
+        addItem,
+        removeItem,
+        clearItems,
+        favs,
+        addFavs,
+        removeFavs,
+        clearFavs,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

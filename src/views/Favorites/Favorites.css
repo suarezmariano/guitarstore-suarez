@@ -1,0 +1,7 @@
+#item {
+  display: inline-flex;
+}
+
+#item h1 {
+  margin: 10px;
+}
