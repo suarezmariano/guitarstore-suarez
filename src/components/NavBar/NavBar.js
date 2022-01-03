@@ -14,7 +14,7 @@ function NavBar() {
         <Link to={`/category/Electrica`}>Eléctricas</Link>
         <Link to={`/category/Acustica`}>Acústicas</Link>
         <Link to={`/favorites`}>Favoritos</Link>
-        <Link to={`/about`}>Nosotros</Link>
+        <Link to={`/orders`}>Mis Compras</Link>
         <Link to={`/cart`}>
           <WidgetCart />
         </Link>
