@@ -32,6 +32,8 @@ function Cart() {
     e.preventDefault();
     const docRef = await addDoc(collection(db, 'orders'), {
       values,
+      total,
+      items,
     });
     setOrderID(docRef);
     setTimeout(() => {
@@ -142,7 +144,9 @@ function Cart() {
           orderID.id && (
             <div>
               <MessageSuccess msg={orderID} />
-              <Link to={`/`}>Retornar a la página principal</Link>
+              <Link to={`/`} onClick={() => clearItems()}>
+                Retornar a la página principal
+              </Link>
             </div>
           )
         )}
