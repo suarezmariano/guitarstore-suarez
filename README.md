@@ -2,7 +2,9 @@
 
 ## This is my first react-app, developed for the ReactJS course from Coderhouse Argentina.
 
-![GIF](https://media.giphy.com/media/TRAyLKh2sQGC3vxoce/giphy.gif)
+Only made with React, Context, Semantic-UI for visuals and Firebase for DB.
+
+![GIF](https://media.giphy.com/media/UckCx9ItGNzHBXuzYm/giphy.gif)
 
 ### `npm start`
 
