@@ -21,16 +21,13 @@ function Orders() {
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     const getData = async () => {
-      const docRef = doc(db, 'orders', order);
+      const docRef = doc(db, 'orders', order.name);
       const docSnap = await getDoc(docRef);
 
       setData(docSnap.data());
     };
     getData();
   };
-
-  console.log(order);
-  console.log(data);
 
   return (
     <div className=".orders">
