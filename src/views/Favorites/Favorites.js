@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import './Favorites.css';
 
 import { CartContext } from '../../context/CartContext/CartContext';
@@ -20,10 +21,12 @@ function Favorites() {
                 Eliminar
               </button>
               <img src={item.img} alt="artículo" className="ui tiny image" />
-              <h1>
-                {item.brand} {item.model}
-              </h1>
-              <h1>P.U. u$s{item.price}</h1>
+              <Link to={`/item/${item.id}`}>
+                <h1>
+                  {item.brand} {item.model}
+                </h1>
+                <h1>P.U. u$s{item.price}</h1>
+              </Link>
             </div>
           </div>
         ))}
