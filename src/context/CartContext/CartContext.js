@@ -50,7 +50,7 @@ export const CartProvider = ({ children }) => {
   const addFavs = (data) => {
     isInFavs(data.id)
       ? alert('Ya esta en tus favoritos!')
-      : setItems([
+      : setFavs([
           ...favs,
           {
             id: data.id,
