@@ -1,0 +1,10 @@
+.error-page {
+  width: min(100% - 2rem, 720px);
+  margin: 2rem auto;
+  padding: 0 0 2rem;
+  overflow-wrap: anywhere;
+}
+
+.error-page h1 {
+  font-size: clamp(1.75rem, 7vw, 3rem);
+}

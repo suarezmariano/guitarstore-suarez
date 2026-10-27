@@ -30,12 +30,12 @@ function Orders() {
   };
 
   return (
-    <div className=".orders">
+    <div className="orders-page">
       <h1>Ingresá tu número de orden</h1>
       <div className="ui container">
         <div className="ui segment">
-          <form class="ui form" onSubmit={onSubmitHandler}>
-            <div class="field">
+          <form className="ui form" onSubmit={onSubmitHandler}>
+            <div className="field">
               <input
                 name="name"
                 placeholder="Número de Orden"
@@ -44,7 +44,7 @@ function Orders() {
               />
             </div>
 
-            <button type="submit" class="ui button">
+            <button type="submit" className="ui button">
               Buscar
             </button>
           </form>

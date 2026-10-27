@@ -1,4 +1,4 @@
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.item-list-page {
+  width: 100%;
+  min-width: 0;
 }

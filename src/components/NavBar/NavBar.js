@@ -5,7 +5,7 @@ import WidgetCart from '../WidgetCart/WidgetCart';
 
 function NavBar() {
   return (
-    <div className="container">
+    <div className="navbar-container">
       <a href="/" className="logo">
         <span>Guitar</span>Store
       </a>

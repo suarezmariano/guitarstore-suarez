@@ -1,7 +1,36 @@
 #item {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 #item h1 {
-  margin: 10px;
+  margin: 0.25rem;
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+.ui.container > h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+}
+
+.ui.container > .ui.segment {
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+}
+
+#item .ui.image {
+  flex: 0 0 80px;
+}
+
+@media (max-width: 480px) {
+  #item h1 {
+    width: 100%;
+    text-align: left;
+  }
+
+  #item .ui.image {
+    flex-basis: 64px;
+  }
 }

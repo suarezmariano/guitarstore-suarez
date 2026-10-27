@@ -1,9 +1,32 @@
 .buttons-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 .buttons-container div {
   display: flex;
   justify-content: center;
+  min-width: 0;
+}
+
+.buttons-container .ui.buttons {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .buttons-container {
+    flex-direction: column;
+  }
+
+  .buttons-container .ui.buttons {
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .buttons-container .ui.button {
+    margin: 0.2rem;
+  }
 }

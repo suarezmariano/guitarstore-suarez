@@ -1,11 +1,45 @@
 .footer-container {
-  position: absolute;
-  margin-top: 50px;
-  bottom: 0;
+  position: static;
+  margin-top: auto;
   width: 100%;
+  padding: 1rem;
+}
+
+.box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box-container .box {
+  max-width: 100%;
+}
+
+.box-container p {
+  margin: 0;
 }
 
 .box-container .box a {
   display: inline-block;
-  margin-right: 2rem;
+  margin: 0.25rem 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    padding: 1rem;
+    font-size: 0.875rem;
+  }
+
+  .box-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .box-container .box a {
+    margin: 0.25rem 0.5rem;
+  }
 }

@@ -1,3 +1,13 @@
 .itemDetail-container {
   margin-left: 50px;
 }
+.itemDetail-container {
+  width: 100%;
+  min-width: 0;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+}

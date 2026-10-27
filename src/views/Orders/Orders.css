@@ -1,0 +1,17 @@
+.orders-page {
+  width: min(100% - 2rem, 720px);
+  margin: 1rem auto;
+}
+
+.orders-page h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  overflow-wrap: anywhere;
+}
+
+.orders-page .ui.container {
+  width: 100%;
+}
+
+.orders-page input {
+  width: 100%;
+}
